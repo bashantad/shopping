@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+            Eshop Kathmandu Administration Panel
+        </title>
+        <?php
+        $this->headLink()->appendStylesheet($this->baseUrl() . "/theme/admin/css/style.css");
+        $this->headScript()->appendFile($this->baseUrl() . "/common/js/jquery-1.7.2.min.js");
+        $this->headScript()->appendFile($this->baseUrl() . "/common/js/jquery-ui-1.8.21.custom.min.js");
+        $this->headLink()->appendStylesheet($this->baseUrl() . "/common/css/jquery-ui-1.8.21.custom.css");
+        echo $this->headLink();
+        echo $this->headScript();
+        ?>
+    </head>
+    <body>
+        <div id="container">
+            <div id="top-navigation">
+                <ul class="nav">
+                    <li><a href="<?php echo $this->baseUrl() . '/admin/category'; ?>">Category</a></li>
+                    <li><a href="<?php echo $this->baseUrl() . '/admin/shop'; ?>">Shop</a></li>
+                    <li><a href="<?php echo $this->baseUrl() . '/admin/product'; ?>">Product</a></li>
+                    <li><a href="<?php echo $this->baseUrl() . '/admin/user'; ?>">Users</a></li>
+                    <li><a href="<?php echo $this->baseUrl() . '/admin/book'; ?>">Book</a></li>
+                    <li><a href="<?php echo $this->baseUrl() . '/admin/comment'; ?>">Comment</a></li>
+                    <?php if (Zend_Auth::getInstance()->hasIdentity()) { ?>
+                        <li><a href="<?php echo $this->baseUrl() . '/admin/index/logout'; ?>">Logout</a></li>
+<?php } ?>
+                </ul>
+
+            </div>
+            <div id="application-content">
+<?php echo $this->layout()->content; ?>
+            </div>
+        </div>
+    </body>
+</html>
+

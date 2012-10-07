@@ -1,0 +1,36 @@
+
+
+<table align="right" width="100%" border="1px solid black">
+    <tr>
+<!--        <th>    Product Name    </th>-->
+        <th>    User Name       </th>
+        <th>    Title           </th>
+        <th>    Name            </th>
+        <th>    Email           </th>
+        <th>    Description     </th>
+        <th>    Edit            </th>
+        <th>    Delete          </th>
+            
+
+    </tr>
+    <?php foreach ($this->result as $result): ?>
+
+        <tr>
+<!--            <td><?php echo $result['prouct_name']; ?></td>-->
+            <td><?php echo $result['user_name']; ?></td>
+            <td><?php echo $result['title']; ?></td>
+            <td><?php echo $result['name']; ?></td>
+            <td><?php echo $result['email']; ?></td>
+            <td><?php echo $result['description']; ?></td>
+            
+            <td>
+                <a href="<?php echo $this->url(array('controller' => 'comment', 'action' => 'edit', 'id' => $result['comment_id'])); ?>">Edit </a>
+            </td>
+
+            <td>
+                <a href="<?php echo $this->url(array('controller' => 'comment', 'action' => 'delete', 'id' => $result['comment_id'])); ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>    
+

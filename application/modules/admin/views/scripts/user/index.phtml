@@ -1,0 +1,29 @@
+
+<table align="right" width="100%" border="1px solid black">
+    <tr>
+        <th>    User Name   </th>
+        <th>    Email       </th>
+        <th>    Phone       </th>
+        <th>    Address     </th>
+        <th>    User Type   </th>
+        <th>    Edit        </th> 
+        <th>    Delete      </th> 
+    </tr>
+    <?php foreach ($this->result as $result): ?>
+
+        <tr>
+            <td><?php echo $result['name']; ?></td>
+            <td><?php echo $result['email']; ?></td>
+            <td><?php echo $result['phone']; ?></td>
+            <td><?php echo $result['address']; ?></td>
+            <td><?php echo $result['usertype']; ?></td>
+            <td>
+                <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'edit', 'id' => $result['user_id'])); ?>">Edit </a>
+            </td>
+
+            <td>
+                <a href="<?php echo $this->url(array('controller' => 'user', 'action' => 'delete', 'id' => $result['user_id'])); ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>    

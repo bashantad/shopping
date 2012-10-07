@@ -1,0 +1,45 @@
+/* main styles */
+
+
+#container{
+    width: 1060px;
+    margin: 0px auto;
+    background: #BBD9EE;
+    padding: 7px;
+    height: 100%;
+    min-height: 640px;
+    
+}
+table, td, th
+{
+    border:1px solid green;
+    border-collapse:collapse;
+}
+th
+{
+    background: #4297d7;
+    color:white;
+}
+#top-navigation{
+    background:#fff;
+    color:#000;
+    height:40px;
+
+    padding-top:5px;
+}
+.nav li{
+    list-style:none;
+    display:inline;
+    font-size:18px;
+    padding:10px;
+}
+.nav li a {
+    text-decoration:none;
+}
+.nav li a:hover{
+    text-decoration: underline;
+}
+#application-content{
+    padding:10px;
+    margin:4px;
+}

@@ -1,0 +1,27 @@
+<table align="right" width="100%" border="1px solid black">
+    <tr>
+        <th>    Category Name   </th>
+        <th>    Shop Name       </th>
+        <th>    Parent Category       </th>
+        <th>    Edit            </th>
+        <th>    Delete          </th>
+
+    </tr>
+    <?php foreach ($this->result as $result): ?>
+
+        <tr>
+            <td><?php echo $result['name']; ?></td>
+            <td><?php echo $result['shop_name']; ?></td>
+            <td><?php echo $result['parent_category']; ?></td>
+
+
+            <td>
+                <a href="<?php echo $this->url(array('controller' => 'category', 'action' => 'edit', 'id' => $result['category_id'])); ?>">Edit </a>
+            </td>
+
+            <td>
+                <a href="<?php echo $this->url(array('controller' => 'category', 'action' => 'delete', 'id' => $result['category_id'])); ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>    

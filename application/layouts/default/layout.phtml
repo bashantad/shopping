@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title> Welcome to Online Shopping Store in Kathmandu </title>
+
+        <?php
+        $this->headLink()->appendStylesheet($this->baseUrl() . "/theme/default/css/style.css");
+        $this->headScript()->appendFile($this->baseUrl() . "/common/js/jquery-1.7.2.min.js");
+        $this->headScript()->appendFile($this->baseUrl() . "/common/js/jquery-ui-1.8.21.custom.min.js");
+        $this->headLink()->appendStylesheet($this->baseUrl() . "/common/css/jquery-ui-1.8.21.custom.css");
+        echo $this->headLink();
+        echo $this->headScript();
+        ?> 
+    </head>
+    <body>
+        <div id="container">
+
+            <div id="layout-content">
+            </div>
+            <div id="application-content">
+                <?php echo $this->layout()->content; ?>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function($) {
+                //Menu animation						
+                $('#navList ul').css({display: "none"}); //Fix Opera
+ 
+                $('#navList li').hover(function() {  
+                    $(this).addClass('addPosition');
+                    $(this).find('a').stop().animate({'width' : "280"});
+                    $(this).find('ul:first').css({visibility : "visible", display : "none"}).show(400);
+ 
+                }, function() {
+                    $(this).find('ul:first').css({visibility : "hidden"}).hide(400);
+                    $(this).find('a').stop().animate({'width' : "250"});
+                    $(this).removeClass('addPosition');
+                });
+            });
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <?php
+        echo $this->form;
+        ?>
+    </body>
+</html>
+<script>
+    $(document).ready(function(){
+        $('#parent_id').change(function(){
+            var val = $(this).val();
+            var category_id = $('#category_id').val();
+            console.log(category_id);
+            if(val==category_id){
+                alert("Parent Menu and name can't be same");
+                $(this).val('');
+            }
+        });
+    
+    
+    })
+</script> 

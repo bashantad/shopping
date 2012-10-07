@@ -1,0 +1,30 @@
+
+<table align="right" width="100%" border="1px solid black">
+    <tr>
+        <th>    Category        </th>
+        <th>    Name            </th>
+        <th>    Image           </th>
+        <th>    Description     </th>
+        <th>    Price           </th>
+        <th>    Edit            </th> 
+        <th>    Delete          </th> 
+    </tr>
+    <?php foreach ($this->results as $result): ?>
+
+        <tr>
+            <td><?php echo $result['category_name']; ?></td>
+            <td><?php echo $result['name']; ?></td>
+            <td><?php echo $result['image']; ?></td>
+            <td><?php echo $result['description']; ?></td>
+            <td><?php echo $result['price'];    ?></td>
+            
+            <td>
+                <a href="<?php echo $this->url(array('controller' => 'product', 'action' => 'edit', 'id' => $result['product_id'])); ?>">Edit </a>
+            </td>
+
+            <td>
+                <a href="<?php echo $this->url(array('controller' => 'product', 'action' => 'delete', 'id' => $result['product_id'])); ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>    
